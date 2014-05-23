@@ -1,0 +1,16 @@
+<h1>Cats</h1>
+
+<a href="/cats/new">Add a Cat</a>
+
+<% if @cats.empty? %>
+  <p>There aren't any cats yet!</p>
+<% else %>
+  <% @cats.each do |cat| %>
+    <h3><%= cat[:name] %></h3>
+
+    <ul>
+      <li><%= cat[:breed] %></li>
+      <li><%= cat[:description] %></li>
+    </ul>
+  <% end %>
+<% end %>

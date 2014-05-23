@@ -1,0 +1,31 @@
+
+<h1>New Cat</h1>
+
+<% if @errors && @errors.any? %>
+  <ul class="errors-list">
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/cats" method="post">
+  <div>
+    <label for="cat[name]">Name</label>
+    <input type="text" name="cat[name]" value="<%= @cat[:name] %>">
+  </div>
+
+  <div>
+    <label for="cat[breed]">Breed</label>
+    <input type="text" name="cat[breed]" value="<%= @cat[:breed] %>">
+  </div>
+
+  <div>
+    <label for="cat[description]">Description</label>
+    <textarea name="cat[description]"><%= @cat[:description] %></textarea>
+  </div>
+
+  <div>
+    <input type="submit">
+  </div>
+</form>
